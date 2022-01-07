@@ -5,7 +5,6 @@ import {
   Box,
   Heading,
   Text,
-  Flex,
   Link,
 } from "@chakra-ui/react";
 import TypeAnimation from "react-type-animation";
