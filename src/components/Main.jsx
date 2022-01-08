@@ -3,63 +3,93 @@ import {
   VStack,
   StackDivider,
   Box,
-  Heading,
   Text,
+  Heading,
   Link,
+  useColorMode,
+  Image,
+  Container,
 } from "@chakra-ui/react";
 import TypeAnimation from "react-type-animation";
 import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import ModeToggle from "./ModeToggle";
+import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
+import SocialIcon from "./SocialIcon";
 
 const ProfileImage = styled.img`
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 5px solid skyblue;
+  border: 5px solid white;
   margin: auto;
 `;
 
-const Image = styled.img`
-  min-height: 100px;
-  max-height: 160px;
-  border-radius: 2px;
-  border: 2px solid white;
-  margin: auto;
-  &:hover {
-    border: 5px solid white;
-    cursor: pointer;
-  }
+const IconImage = styled.img`
+  height: 40px;
+  display: flex;
 `;
 
-const Feature = ({ title, desc, bgColor, img, href, ...rest }) => {
+const Feature = ({
+  title,
+  desc,
+  bgColor,
+  img,
+  href,
+  basic,
+  django,
+  react,
+  node,
+  express,
+  mongodb,
+  postgres,
+  typescript,
+  bootstrap,
+  ...rest
+}) => {
   return (
     <Box
-      p={10}
       maxW="md"
       bgGradient={bgColor}
       shadow="md"
-      borderWidth="2px"
       flex="1"
       borderRadius="xl"
       overflow="hidden"
       fontFamily="cursive"
     >
       <Link isExternal href={href}>
-        <Heading fontSize="xl" fontFamily="cursive">
+        <Image src={img} alt="Project Image" />
+        <Heading pt={3} pb={1} fontSize="xl" fontFamily="cursive">
           {title}
         </Heading>
+        <Text fontWeight="light" mt={0} pb={1}>
+          {desc}
+        </Text>
       </Link>
-      <Text mt={5} p={3}>
-        {desc}
-      </Text>
-      <Link isExternal href={href}>
-        <Image src={img} />
-      </Link>
+      <HStack
+        p={2}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <IconImage src={basic} />
+        <IconImage src={react} />
+        <IconImage src={node} />
+        <IconImage src={django} />
+        {/* <IconImage src={express} /> */}
+        <IconImage src={mongodb} />
+        <IconImage src={bootstrap} />
+        <IconImage src={postgres} />
+        <IconImage src={typescript} />
+      </HStack>
     </Box>
   );
 };
 
 export const Main = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       {/* <Flex
@@ -69,10 +99,11 @@ export const Main = () => {
         w="100%"
         h="40px"
       ></Flex> */}
-      <div>
-        <Parallax pages={2} style={{ top: "0", left: "0" }}>
+
+      <Container>
+        <Parallax pages={3} style={{ top: "0", left: "0" }}>
           <ParallaxLayer
-            offset={0.3}
+            offset={0}
             speed={0.5}
             style={{
               display: "flex",
@@ -87,53 +118,29 @@ export const Main = () => {
             >
               <ProfileImage src="/images/me.jpg" />
               <Text fontSize="x-large">
-                My name is Kenji
+                Hello! Call me Yiqian or Kenji
                 <TypeAnimation
                   cursor={true}
                   sequence={[
-                    "I am a Software Developer.",
+                    "I am a Software Developer",
                     2000,
-                    "Also a Designer",
+                    "Often an UI Designer",
+                    2000,
+                    "Occasionally a 3D Artist",
                     2000,
                   ]}
-                  wrapper="h1"
                   repeat={Infinity}
+                  wrapper="h2"
                 />
               </Text>
 
-              <Text fontSize="x-large" fontFamily="cursive">
-                My Projects
-              </Text>
-
-              <HStack spacing={10}>
-                <Feature
-                  href="https://mygaragesale.herokuapp.com/"
-                  bgColor="linear(salmon,gray.300)"
-                  img="/images/garagesale.jpg"
-                  title="GarageSale"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />
-                <Feature
-                  href="https://diylifestyle.herokuapp.com/"
-                  bgColor="linear(orange.200,gray.300)"
-                  img="/images/diylifestyle.jpg"
-                  title="DiyLifeStyle"
-                  desc="A meal-planning app that aspires to let user take charge of their lifestyle."
-                />
+              <HStack>
+                <SocialIcon />
               </HStack>
-              <HStack spacing={10}>
-                <Feature
-                  href="https://mycryptotrader.herokuapp.com/"
-                  bgColor="linear(green.200,gray.300)"
-                  title="DiyLifeStyle"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />
-                <Feature
-                  bgColor="linear(linkedin.300,gray.300)"
-                  title="CryptoTrader"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />
-              </HStack>
+              <ModeToggle />
+              <h1>
+                Scroll Down More <ArrowDownIcon />
+              </h1>
             </VStack>
           </ParallaxLayer>
 
@@ -144,36 +151,165 @@ export const Main = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              backgroundColor: "#c6e2e4",
             }}
           >
             <VStack
               divider={<StackDivider borderColor="gray.20" />}
-              spacing={0}
+              spacing={5}
+              align="stretch"
+            >
+              <Text fontSize="x-large" fontFamily="cursive">
+                My Projects
+              </Text>
+              <HStack spacing={10}>
+                <Feature
+                  react="/logo/react.png"
+                  django="/logo/django.png"
+                  postgres="/logo/postgres.png"
+                  bootstrap="logo/bootstrap.png"
+                  href="https://mygaragesale.herokuapp.com/"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.800)"
+                      : "linear(gray.300, salmon)"
+                  }
+                  img="/images/garagesale.jpg"
+                  title="GarageSale"
+                  desc="Marketplace for sellers & buyers"
+                />
+
+                <Feature
+                  node="/logo/node.png"
+                  express="/logo/express.png"
+                  mongodb="/logo/mongodb.png"
+                  bootstrap="logo/bootstrap.png"
+                  href="https://diylifestyle.herokuapp.com/"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.800)"
+                      : "linear(gray.300, orange.200)"
+                  }
+                  img="/images/diylifestyle.jpg"
+                  title="DiyLifeStyle"
+                  desc="Meal-planning app to improve your lifestyle."
+                />
+              </HStack>
+              <HStack spacing={10}>
+                <Feature
+                  react="/logo/react.png"
+                  typescript="/logo/typescript.png"
+                  href="https://react-typescript-quiz-inky.vercel.app/"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.800)"
+                      : "linear(gray.300,green.200)"
+                  }
+                  img="/images/quiz.jpg"
+                  title="ReactTypescriptQuiz"
+                  desc="Do the quiz test your knowledge!"
+                />
+                <Feature
+                  react="/logo/react.png"
+                  node="/logo/node.png"
+                  express="/logo/express.png"
+                  mongodb="/logo/mongodb.png"
+                  bootstrap="logo/bootstrap.png"
+                  href="https://mycryptotrader.herokuapp.com/"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.800)"
+                      : "linear(gray.300,linkedin.300)"
+                  }
+                  img="/images/cryptotrader.jpg"
+                  title="CryptoTrader"
+                  desc="Crypto-trading app with CoinGecko API"
+                />
+              </HStack>
+              <HStack spacing={10}>
+                <Feature
+                  basic="/logo/basic.png"
+                  bootstrap="logo/bootstrap.png"
+                  href="https://github.com/gohyiqian/MyPokedex"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.800)"
+                      : "linear(gray.300,orange.200)"
+                  }
+                  img="/images/pokedex.jpg"
+                  title="PokeDex"
+                  desc="Gotta catch 'em all. Pokemon!"
+                />
+                <Feature
+                  basic="/logo/basic.png"
+                  bootstrap="logo/bootstrap.png"
+                  href="https://gohyiqian.github.io/fastest-fingers-game/"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.800)"
+                      : "linear(gray.300,purple.300)"
+                  }
+                  title="FastestFingers"
+                  img="/images/fastestfinger.jpg"
+                  desc="Practice your coding speed!"
+                />
+              </HStack>
+              <ModeToggle />
+              <h1>
+                Scroll Down More <ArrowDownIcon />
+              </h1>
+            </VStack>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={2}
+            speed={2.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: `${
+                colorMode === "dark" ? "#404A6B" : "#c6e2e4"
+              }`,
+            }}
+          >
+            <VStack
+              divider={<StackDivider borderColor="gray.20" />}
+              spacing={3}
               align="stretch"
             >
               <HStack spacing={10}>
                 <Feature
-                  bgColor="linear(white,gray.200)"
+                  href="mailto: kenji.gohyiqian@gmail.com"
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.700)"
+                      : "linear(gray.300, white)"
+                  }
                   title="Contact Me"
-                  desc="kenji.gohyiqian@gmail.com"
-                  img="/images/me.jpg"
+                  desc="Click to Contact"
+                  img="/images/email.jpg"
                 />
                 <Feature
-                  bgColor="linear(white,gray.200)"
+                  href="/yiqian_resume.pdf"
+                  download
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.700)"
+                      : "linear(gray.300, white)"
+                  }
                   title="My Resume"
-                  desc="kenji.gohyiqian@gmail.com"
-                />
-                <Feature
-                  bgColor="linear(white,gray.200)"
-                  title="My Resume"
-                  desc="kenji.gohyiqian@gmail.com"
+                  desc="Click to download"
+                  img="/images/resume.jpg"
                 />
               </HStack>
+              <ModeToggle />
+              <h1>
+                Scroll Back Up <ArrowUpIcon />
+              </h1>
             </VStack>
           </ParallaxLayer>
         </Parallax>
-      </div>
+      </Container>
     </>
   );
 };
