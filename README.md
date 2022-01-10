@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# 2022 Portforlio
+
+[Access Website](https://portfolio-gohyiqian.vercel.app/)
+
+Purpose is to create a webfolio to consolidate my 2021 projects and to learn to work with new dependencies and Styling UI.
+
+## Tech Stack
+
+- React
+- TypeScript
+- Chakra UI (HStack, VStack, useColorMode)
+- React-spring
+- React-type animation
+- Styled components
+
+## Preview
+
+![Gif](/public/images/portfolio.gif)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
