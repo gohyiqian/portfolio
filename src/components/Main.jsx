@@ -214,7 +214,7 @@ export const Main = () => {
                   express="/logo/express.png"
                   mongodb="/logo/mongodb.png"
                   bootstrap="logo/bootstrap.png"
-                  href="https://mycryptotrader.herokuapp.com/"
+                  href="https://github.com/onggq37/crypto_trader"
                   bgColor={
                     colorMode === "dark"
                       ? "linear(gray.300,gray.800)"
