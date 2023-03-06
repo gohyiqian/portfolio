@@ -278,6 +278,30 @@ export const Main = () => {
               align="stretch"
             >
               <HStack spacing={10}>
+                 <Feature
+                  href="/CV2023_GohYiQian.pdf"
+                  download
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.700)"
+                      : "linear(gray.300, white)"
+                  }
+                  title="Resume 2023"
+                  desc="Click to download"
+                  img="/images/resume_2023.jpg"
+                />
+                <Feature
+                  href="/yiqian_resume.pdf"
+                  download
+                  bgColor={
+                    colorMode === "dark"
+                      ? "linear(gray.300,gray.700)"
+                      : "linear(gray.300, white)"
+                  }
+                  title="Resume 2022"
+                  desc="Click to download"
+                  img="/images/resume_2022.jpg"
+                />
                 <Feature
                   href="mailto: kenji.gohyiqian@gmail.com"
                   bgColor={
@@ -288,18 +312,6 @@ export const Main = () => {
                   title="Contact Me"
                   desc="Click to Contact"
                   img="/images/email.jpg"
-                />
-                <Feature
-                  href="/yiqian_resume.pdf"
-                  download
-                  bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.700)"
-                      : "linear(gray.300, white)"
-                  }
-                  title="My Resume"
-                  desc="Click to download"
-                  img="/images/resume.jpg"
                 />
               </HStack>
               <ModeToggle />
