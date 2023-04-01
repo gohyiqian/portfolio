@@ -216,7 +216,7 @@ export const Main = () => {
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
-                      : 'linear(gray.300, #685a3f.200)'
+                      : 'linear(gray.300, #6d3c3c.200)'
                   }
                   img="/images/blog.jpg"
                   title="My Tech Blog (Beta)"
