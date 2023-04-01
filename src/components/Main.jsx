@@ -211,10 +211,10 @@ export const Main = () => {
                   desc="Marketplace for sellers & buyers"
                 />
                 <Feature
-                  nextjs="/logo/nextjs.png"
-                  mongodb="/logo/mongodb.png"
+                  nextjs="/logo/next.png"
                   prisma="/logo/prisma.svg"
-                  href="www.gohyiqian.com"
+                  mongodb="/logo/mongodb.png"
+                  href="https://www.gohyiqian.com/"
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
