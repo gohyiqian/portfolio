@@ -85,6 +85,8 @@ const Feature = ({
         <IconImage src={bootstrap} />
         <IconImage src={postgres} />
         <IconImage src={typescript} />
+        <IconImage src={nextjs} />
+        <IconImage src={prisma} />
       </HStack>
     </Box>
   );
@@ -216,7 +218,7 @@ export const Main = () => {
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
-                      : 'linear(gray.300, #6d3c3c.200)'
+                      : 'linear(gray.300, #6b4242)'
                   }
                   img="/images/blog.jpg"
                   title="My Tech Blog (Beta)"
