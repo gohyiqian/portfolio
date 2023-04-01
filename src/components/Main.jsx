@@ -9,13 +9,13 @@ import {
   useColorMode,
   Image,
   Container,
-} from "@chakra-ui/react";
-import TypeAnimation from "react-type-animation";
-import styled from "styled-components";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import ModeToggle from "./ModeToggle";
-import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
-import SocialIcon from "./SocialIcon";
+} from '@chakra-ui/react';
+import TypeAnimation from 'react-type-animation';
+import styled from 'styled-components';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import ModeToggle from './ModeToggle';
+import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons';
+import SocialIcon from './SocialIcon';
 
 const ProfileImage = styled.img`
   width: 160px;
@@ -69,9 +69,9 @@ const Feature = ({
       <HStack
         p={2}
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <IconImage src={basic} />
@@ -101,14 +101,14 @@ export const Main = () => {
       ></Flex> */}
 
       <Container>
-        <Parallax pages={3} style={{ top: "0", left: "0" }}>
+        <Parallax pages={3} style={{ top: '0', left: '0' }}>
           <ParallaxLayer
             offset={0}
             speed={0.5}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <VStack
@@ -122,11 +122,11 @@ export const Main = () => {
                 <TypeAnimation
                   cursor={true}
                   sequence={[
-                    "I am a Software Developer",
+                    'I am a Software Developer',
                     2000,
-                    "Often an UI Designer",
+                    'Often an UI Designer',
                     2000,
-                    "Occasionally a 3D Artist",
+                    'Occasionally a 3D Artist',
                     2000,
                   ]}
                   repeat={Infinity}
@@ -148,9 +148,9 @@ export const Main = () => {
             offset={1}
             speed={2}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <VStack
@@ -164,30 +164,26 @@ export const Main = () => {
               <HStack spacing={10}>
                 <Feature
                   react="/logo/react.png"
-                  django="/logo/django.png"
-                  postgres="/logo/postgres.png"
-                  bootstrap="logo/bootstrap.png"
-                  href="https://mygaragesale.herokuapp.com/"
+                  href="https://nextmedia-gohyiqian.vercel.app/"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.800)"
-                      : "linear(gray.300, salmon)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300, salmon)'
                   }
-                  img="/images/garagesale.jpg"
-                  title="GarageSale"
-                  desc="Marketplace for sellers & buyers"
+                  img="/images/nextmedia.jpg"
+                  title="NextMedia"
+                  desc="Landing Page for AR consultancy company"
                 />
-
                 <Feature
                   node="/logo/node.png"
                   express="/logo/express.png"
                   mongodb="/logo/mongodb.png"
                   bootstrap="logo/bootstrap.png"
-                  href="https://diylifestyle.herokuapp.com/"
+                  href="https://diylifestyle.up.railway.app/"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.800)"
-                      : "linear(gray.300, orange.200)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300, orange.200)'
                   }
                   img="/images/diylifestyle.jpg"
                   title="DiyLifeStyle"
@@ -197,12 +193,44 @@ export const Main = () => {
               <HStack spacing={10}>
                 <Feature
                   react="/logo/react.png"
+                  django="/logo/django.png"
+                  postgres="/logo/postgres.png"
+                  bootstrap="logo/bootstrap.png"
+                  href="https://mygaragesale.herokuapp.com/"
+                  bgColor={
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300, salmon)'
+                  }
+                  img="/images/garagesale.jpg"
+                  title="GarageSale"
+                  desc="Marketplace for sellers & buyers"
+                />
+
+                <Feature
+                  nextjs="/logo/next.png"
+                  mongodb="/logo/mongodb.png"
+                  prisma="logo/prisma.svg"
+                  href="www.gohyiqian.com"
+                  bgColor={
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300, orange.200)'
+                  }
+                  img="/images/blog.jpg"
+                  title="My Tech Blog (Beta)"
+                  desc="Starting my own personal blog on Tech"
+                />
+              </HStack>
+              <HStack spacing={10}>
+                <Feature
+                  react="/logo/react.png"
                   typescript="/logo/typescript.png"
                   href="https://react-typescript-quiz-inky.vercel.app/"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.800)"
-                      : "linear(gray.300,green.200)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300,green.200)'
                   }
                   img="/images/quiz.jpg"
                   title="ReactTypescriptQuiz"
@@ -216,9 +244,9 @@ export const Main = () => {
                   bootstrap="logo/bootstrap.png"
                   href="https://github.com/onggq37/crypto_trader"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.800)"
-                      : "linear(gray.300,linkedin.300)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300,linkedin.300)'
                   }
                   img="/images/cryptotrader.jpg"
                   title="CryptoTrader"
@@ -231,9 +259,9 @@ export const Main = () => {
                   bootstrap="logo/bootstrap.png"
                   href="https://github.com/gohyiqian/MyPokedex"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.800)"
-                      : "linear(gray.300,orange.200)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300,orange.200)'
                   }
                   img="/images/pokedex.jpg"
                   title="PokeDex"
@@ -244,9 +272,9 @@ export const Main = () => {
                   bootstrap="logo/bootstrap.png"
                   href="https://gohyiqian.github.io/fastest-fingers-game/"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.800)"
-                      : "linear(gray.300,purple.300)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.800)'
+                      : 'linear(gray.300,purple.300)'
                   }
                   title="FastestFingers"
                   img="/images/fastestfinger.jpg"
@@ -264,11 +292,11 @@ export const Main = () => {
             offset={2}
             speed={2.5}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
               backgroundColor: `${
-                colorMode === "dark" ? "#404A6B" : "#c6e2e4"
+                colorMode === 'dark' ? '#404A6B' : '#c6e2e4'
               }`,
             }}
           >
@@ -278,13 +306,13 @@ export const Main = () => {
               align="stretch"
             >
               <HStack spacing={10}>
-                 <Feature
+                <Feature
                   href="/CV2023_GohYiQian.pdf"
                   download
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.700)"
-                      : "linear(gray.300, white)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.700)'
+                      : 'linear(gray.300, white)'
                   }
                   title="Resume 2023"
                   desc="Click to download"
@@ -294,9 +322,9 @@ export const Main = () => {
                   href="/yiqian_resume.pdf"
                   download
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.700)"
-                      : "linear(gray.300, white)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.700)'
+                      : 'linear(gray.300, white)'
                   }
                   title="Resume 2022"
                   desc="Click to download"
@@ -305,9 +333,9 @@ export const Main = () => {
                 <Feature
                   href="mailto: kenji.gohyiqian@gmail.com"
                   bgColor={
-                    colorMode === "dark"
-                      ? "linear(gray.300,gray.700)"
-                      : "linear(gray.300, white)"
+                    colorMode === 'dark'
+                      ? 'linear(gray.300,gray.700)'
+                      : 'linear(gray.300, white)'
                   }
                   title="Contact Me"
                   desc="Click to Contact"
