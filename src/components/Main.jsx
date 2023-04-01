@@ -45,6 +45,8 @@ const Feature = ({
   postgres,
   typescript,
   bootstrap,
+  nextjs,
+  prisma,
   ...rest
 }) => {
   return (
@@ -168,7 +170,7 @@ export const Main = () => {
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
-                      : 'linear(gray.300, #ff3df5)'
+                      : 'linear(gray.300, #b068ac)'
                   }
                   img="/images/nextmedia.jpg"
                   title="NextMedia"
@@ -206,7 +208,6 @@ export const Main = () => {
                   title="GarageSale"
                   desc="Marketplace for sellers & buyers"
                 />
-
                 <Feature
                   nextjs="/logo/nextjs.png"
                   mongodb="/logo/mongodb.png"
@@ -215,7 +216,7 @@ export const Main = () => {
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
-                      : 'linear(gray.300, #674300.200)'
+                      : 'linear(gray.300, #685a3f.200)'
                   }
                   img="/images/blog.jpg"
                   title="My Tech Blog (Beta)"
