@@ -168,7 +168,7 @@ export const Main = () => {
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
-                      : 'linear(gray.300, salmon)'
+                      : 'linear(gray.300, #ff3df5)'
                   }
                   img="/images/nextmedia.jpg"
                   title="NextMedia"
@@ -208,14 +208,14 @@ export const Main = () => {
                 />
 
                 <Feature
-                  nextjs="/logo/next.png"
+                  nextjs="/logo/nextjs.png"
                   mongodb="/logo/mongodb.png"
-                  prisma="logo/prisma.svg"
+                  prisma="/logo/prisma.svg"
                   href="www.gohyiqian.com"
                   bgColor={
                     colorMode === 'dark'
                       ? 'linear(gray.300,gray.800)'
-                      : 'linear(gray.300, orange.200)'
+                      : 'linear(gray.300, #674300.200)'
                   }
                   img="/images/blog.jpg"
                   title="My Tech Blog (Beta)"
